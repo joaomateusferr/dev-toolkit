@@ -1,0 +1,5 @@
+# exclude everything
+/config/*
+
+# exception to the rule
+!/config/.gitkeep 

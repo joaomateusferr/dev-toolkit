@@ -1,4 +1,4 @@
 <div class="sidebar">
-  	<a class="active" href="<?php echo $ProjectPath.'/?tab=HOME' ?>">Home</a>
-  	<a href="<?php echo $ProjectPath.'/?tab=CLIP_BOARD' ?>">Clip Board</a>
+  	<a <?php echo $CurrentTool == 'home' ? 'class="active"' : '';?> href="<?php echo "$ProjectPublicRoot/components/tools/home.php" ?>">Home</a>
+  	<a <?php echo $CurrentTool == 'clip-board' ? 'class="active"' : '';?> href="<?php echo "$ProjectPublicRoot/components/tools/clip-board.php" ?>">Clip Board</a>
 </div>

@@ -21,7 +21,7 @@ class DummyFile {
             
         if(!is_numeric($Size[0]) || !in_array($Size[1], $Unit)){
 
-            echo "Invalid size!\nUse the pattern SizeUnit (5MB)\n";
+            throw new Exception(Exceptions::DUMMY_FILE_INVALID_SIZE);
 
         } else {
 

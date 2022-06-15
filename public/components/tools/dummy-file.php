@@ -9,8 +9,6 @@
         echo 'Exception: ',  $E->getMessage(), "\n";
     }
 
-    var_dump($Result);
-
 ?>
 
 <!DOCTYPE html>

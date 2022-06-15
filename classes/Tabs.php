@@ -5,7 +5,8 @@ class Tools {
     public const POSSIBLE_TOOLS = [
         'home',
         'clip-board',
-        'useful-links',
+        'dummy-file',
+        'useful-links'
     ];    
 
 }

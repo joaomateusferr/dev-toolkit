@@ -1,2 +1,6 @@
-# exclude everything except gitkeep 
-/config/[!.gitkeep]*
+# exclude everything except .gitkeep 
+/config/*
+!/config/.gitkeep
+
+/dummy-files/*
+!/dummy-files/.gitkeep

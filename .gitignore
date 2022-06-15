@@ -1,2 +1,3 @@
 # exclude everything except gitkeep 
 /config/[!.gitkeep]*
+/files/[!.gitkeep]*

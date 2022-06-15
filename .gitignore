@@ -2,5 +2,5 @@
 /config/*
 !/config/.gitkeep
 
-/files/*
-!/files/.gitkeep
+/dummy-files/*
+!/dummy-files/.gitkeep

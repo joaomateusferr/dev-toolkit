@@ -2,7 +2,7 @@
 
 class DummyFile {
 
-    private const DUMMY_FILE_FILE_PATH = '/dev-toolkit/files/';
+    private const DUMMY_FILE_FILE_PATH = '/dev-toolkit/dummy-files/';
 
     function createDummyFile($Size, $Name, $Extension) {
 

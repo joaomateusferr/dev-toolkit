@@ -3,9 +3,14 @@
     $CurrentTool = basename(__FILE__, '.php');
 
     $ClipBoard = new ClipBoard();
+    $Lines = 0;
 
-    if(!empty($_POST['ClipBoardTextArea']))
+    if(isset($_POST['ClipBoardTextArea']))
         $ClipBoard->setClipBoard($_POST['ClipBoardTextArea']);
+
+    $Content = $ClipBoard->getClipBoard();
+    $Lines = substr_count($Content, "\n") + 1;
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +35,7 @@
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="ClipBoard">
 
                     <div class="col-xs-12">
-                        <textarea class="clip-board" name="ClipBoardTextArea" rows="20"><?php echo $ClipBoard->getClipBoard(); ?></textarea>
+                        <textarea class="clip-board" name="ClipBoardTextArea" rows="<?php echo $Lines < 20 ? 20 : $Lines; ?>"><?php echo $Content; ?></textarea>
                     </div>
 
                     <div class="col-xs-12">

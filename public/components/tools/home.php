@@ -6,9 +6,11 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<link rel="stylesheet" href="../../css/light.css">
-	</head>
+    
+    <?php
+        require_once("../head.php");
+    ?>
+
 	<body>
 
         <?php
@@ -16,7 +18,7 @@
         ?>
 
         <div class="main">
-            <div class="child">
+            <div class="child container">
                 test
             </div>
         </div>

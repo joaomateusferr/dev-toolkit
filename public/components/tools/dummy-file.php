@@ -3,8 +3,8 @@
     $CurrentTool = basename(__FILE__, '.php');
 
     try {
-        $DummyFile = new DummyFile();
-        $Result = $DummyFile->createDummyFile('2MB', 'test', 'zip');
+        //$DummyFile = new DummyFile();
+        //$Result = $DummyFile->createDummyFile('2MB', 'test', 'zip');
     } catch (Exception $E) {
         echo 'Exception: ',  $E->getMessage(), "\n";
     }
@@ -14,9 +14,11 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<link rel="stylesheet" href="../../css/light.css">
-	</head>
+    
+    <?php
+        require_once("../head.php");
+    ?>
+
 	<body>
 
         <?php

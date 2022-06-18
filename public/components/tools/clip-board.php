@@ -29,17 +29,21 @@
 
         <div class="main">
 
-            <div class="container child">
+            <div class="container-fluid child">
 
 
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="ClipBoard">
 
-                    <div class="col-xs-12">
-                        <textarea class="clip-board" name="ClipBoardTextArea" rows="<?php echo $Lines < 20 ? 20 : $Lines; ?>"><?php echo $Content; ?></textarea>
-                    </div>
+                    <div class="row">
 
-                    <div class="col-xs-12">
-                        <button class="clip-board" type="submit" value="Submit">Update</button>
+                        <div class="col-xs-12">
+                            <textarea class="clip-board" name="ClipBoardTextArea" rows="<?php echo $Lines < 20 ? 20 : $Lines; ?>"><?php echo $Content; ?></textarea>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <button class="clip-board" type="submit" value="Submit">Update</button>
+                        </div>
+                    
                     </div>
                     
                 </form>

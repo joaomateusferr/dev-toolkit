@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 
 <html>
-    
+
     <?php
         require_once("../head.php");
     ?>
@@ -27,7 +27,7 @@
 
         <div class="main">
 
-            <div class="child">
+            <div class="container child">
 
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="DummyFile">
                     

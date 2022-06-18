@@ -11,9 +11,11 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<link rel="stylesheet" href="../../css/light.css">
-	</head>
+
+    <?php
+        require_once("../head.php");
+    ?>
+
 	<body>
 
         <?php
@@ -22,15 +24,23 @@
 
         <div class="main">
 
-            <div class="child">
+            <div class="container child">
+
 
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="ClipBoard">
-                    <textarea class="clip-board" name="ClipBoardTextArea" rows="20"><?php echo $ClipBoard->getClipBoard(); ?></textarea>
-                    <button class="clip-board" type="submit" value="Submit">Update</button>
+
+                    <div class="col-xs-12">
+                        <textarea class="clip-board" name="ClipBoardTextArea" rows="20"><?php echo $ClipBoard->getClipBoard(); ?></textarea>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <button class="clip-board" type="submit" value="Submit">Update</button>
+                    </div>
+                    
                 </form>
-                
-            </div>
             
+            </div>
+
         </div>
 
 	</body>

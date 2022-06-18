@@ -15,7 +15,7 @@ else
     apt-get update
 
     apt-get install apache2 php8.1 libapache2-mod-php8.1
-    apt-get install php-common php-cli php-json php-xml php-zip php-gd php-mbstring php-bcmath php-cur
+    apt-get install php-common php-cli php-json php-xml php-zip php-gd php-mbstring php-bcmath php-curl
 
     if [ ! -e $PHP_DIR ];then
         echo 'PHP not installed'

@@ -18,9 +18,11 @@
         ?>
 
         <div class="main">
-            <div class="child container">
+
+            <div class="container center">
                 test
             </div>
+
         </div>
 
 	</body>

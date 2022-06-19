@@ -27,7 +27,7 @@
 
         <div class="main">
 
-            <div class="container child">
+            <div class="container center">
 
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="DummyFile">
                     

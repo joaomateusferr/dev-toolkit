@@ -40,7 +40,7 @@ div.main {
   padding: 1px 16px;
 }
 
-div.child {
+div.center {
   align-items: center;
   display: flex;
   flex-direction: row;

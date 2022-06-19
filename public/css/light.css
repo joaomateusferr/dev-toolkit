@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   width: 15%;
-  background-color: #f1f1f1;
+  background-color: white;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -54,42 +54,45 @@ div.container {
   margin-bottom: 1%;
 }
 
-form
-{
-	text-align: center;
-	width: 100%;
-	margin: 0;
-	padding:0; 
+div.row {
+  width: 100%;
+  margin-top: 1%;
+  margin-bottom: 2%;
 }
 
-textarea.clip-board {
+label{
+  text-align:left;
+  color: #003060;
+}
+
+textarea, select {
   width: 100%;
   margin-top: 1%;
   margin-bottom: 1%;
-  border: 4px solid #003060;
-  resize: none;
+  border: 3px solid #003060;
+  resize: none !important;
+}
+
+input[type = text], select {
+	background-color:white;
+	color:#003060;
+	border: none;
+  border: 3px solid #003060; 
+	width: 100%;
 }
 
 button{
   background-color:#003060;
 	color:white;
-  font-size: 15px;
+  font-size: 18;
 	border: none;
   border: 2px solid #003060;
-	margin-bottom: 30px;
 	width: 28%;
-	margin-bottom: 10px;
-	margin-top: 10px;
-	margin-left: 20px;
 	padding-top: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
 	padding-left: 10px;
   font-family: "JetBrainsMono";
-}
-
-button.clip-board{
-	margin-left: 0px !important;
 }
 
 @media screen and (max-width: 700px) {

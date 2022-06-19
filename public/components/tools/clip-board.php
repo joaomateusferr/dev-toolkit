@@ -29,23 +29,23 @@
 
         <div class="main">
 
-            <div class="container center">
+            <div class="container">
 
 
                 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>" name="ClipBoard">
 
-                    <div class="row">
+                    <div class="form-row">
 
-                        <div class="col-xs-12">
-                            <textarea class="clip-board" name="ClipBoardTextArea" rows="<?php echo $Lines < 20 ? 20 : $Lines; ?>"><?php echo $Content; ?></textarea>
+                        <div class="col-sm-12">
+                            <textarea name="ClipBoardTextArea" rows="<?php echo $Lines < 20 ? 20 : $Lines; ?>"><?php echo $Content; ?></textarea>
                         </div>
 
                     </div>
 
-                    <div class="row">
+                    <div class="form-row">
 
-                        <div class="col-xs-12">
-                            <button class="clip-board" type="submit" value="Submit">Update</button>
+                        <div class="col-sm-12">
+                            <button type="submit" value="Submit">Update</button>
                         </div>
                     
                     </div>

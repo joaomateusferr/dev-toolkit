@@ -3,8 +3,11 @@
     $CurrentTool = basename(__FILE__, '.php');
 
     try {
-        //$DummyFile = new DummyFile();
-        //$Result = $DummyFile->createDummyFile('2MB', 'test', 'zip');
+
+        if(isset($_POST['FileName']) && isset($_POST['FileExtension']) && isset($_POST['FileSize']) && isset($_POST['FileUnit']) && isset($_POST['FileMode'])){
+            $Result = DummyFile::createDummyFile($_POST['FileName'], $_POST['FileExtension'], $_POST['FileSize'], $_POST['FileUnit'], $_POST['FileMode']);
+        }
+
     } catch (Exception $E) {
         echo 'Exception: ',  $E->getMessage(), "\n";
     }
@@ -35,12 +38,28 @@
                         
                         <div class="col-sm-2">
                             <label for="FileMode">Mode</label>
-                            <input type="text" id="FileMode" name="FileMode">
+                            <select id="FileMode" name="FileMode">
+                                <option value="FILE">File</option>
+                                <option value="COMMAND" selected>Command</option>
+                            </select>
                         </div>
 
                         <div class="col-sm-2">
                             <label for="FileDelete">Delete?</label>
-                            <input type="text" id="FileDelete" name="FileDelete">
+                            <select id="FileDelete" name="FileDelete">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label for="DeleteTime">In?</label>
+                            <select id="DeleteTime" name="DeleteTime">
+                                <option value="5">5 Minutes</option>
+                                <option value="10">10 Minutes</option>
+                                <option value="30">30 Minutes</option>
+                                <option value="60">1 Hour</option>
+                            </select>
                         </div>
 
                     </div>
@@ -64,7 +83,13 @@
 
                         <div class="col-sm-2">
                             <label for="FileUnit">Unit</label>
-                            <input type="text" id="FileUnit" name="FileUnit">
+                            <select id="FileUnit" name="FileUnit">
+                                <option value="B">B</option>
+                                <option value="KB">KB</option>
+                                <option value="MB">MB</option>
+                                <option value="GB">GB</option>
+                                <option value="TB">TB</option>
+                            </select>
                         </div>
 
                     </div>

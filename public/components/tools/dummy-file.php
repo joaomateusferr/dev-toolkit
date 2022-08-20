@@ -35,12 +35,28 @@
                         
                         <div class="col-sm-2">
                             <label for="FileMode">Mode</label>
-                            <input type="text" id="FileMode" name="FileMode">
+                            <select id="FileMode" name="FileMode">
+                                <option value="FILE">File</option>
+                                <option value="COMMAND" selected>Command</option>
+                            </select>
                         </div>
 
                         <div class="col-sm-2">
                             <label for="FileDelete">Delete?</label>
-                            <input type="text" id="FileDelete" name="FileDelete">
+                            <select id="FileDelete" name="FileDelete">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label for="DeleteTime">In?</label>
+                            <select id="DeleteTime" name="DeleteTime">
+                                <option value="5">5 Minutes</option>
+                                <option value="10">10 Minutes</option>
+                                <option value="30">30 Minutes</option>
+                                <option value="60">1 Hour</option>
+                            </select>
                         </div>
 
                     </div>

@@ -3,8 +3,12 @@
     $CurrentTool = basename(__FILE__, '.php');
 
     try {
+
+        if(isset($_POST['FileMode']) && isset($_POST['FileName']) && isset($_POST['FileExtension']) )
+
+        var_dump($_POST);
         //$DummyFile = new DummyFile();
-        //$Result = $DummyFile->createDummyFile('2MB', 'test', 'zip');
+        //$Result = $DummyFile->createDummyFile('2MB', 'test', 'zip', );
     } catch (Exception $E) {
         echo 'Exception: ',  $E->getMessage(), "\n";
     }
@@ -80,7 +84,13 @@
 
                         <div class="col-sm-2">
                             <label for="FileUnit">Unit</label>
-                            <input type="text" id="FileUnit" name="FileUnit">
+                            <select id="FileUnit" name="FileUnit">
+                                <option value="B">B</option>
+                                <option value="KB">KB</option>
+                                <option value="MB">MB</option>
+                                <option value="GB">GB</option>
+                                <option value="TB">TB</option>
+                            </select>
                         </div>
 
                     </div>

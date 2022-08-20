@@ -4,11 +4,10 @@
 
     try {
 
-        if(isset($_POST['FileMode']) && isset($_POST['FileName']) && isset($_POST['FileExtension']) )
+        if(isset($_POST['FileName']) && isset($_POST['FileExtension']) && isset($_POST['FileSize']) && isset($_POST['FileUnit']) && isset($_POST['FileMode'])){
+            $Result = DummyFile::createDummyFile($_POST['FileName'], $_POST['FileExtension'], $_POST['FileSize'], $_POST['FileUnit'], $_POST['FileMode']);
+        }
 
-        var_dump($_POST);
-        //$DummyFile = new DummyFile();
-        //$Result = $DummyFile->createDummyFile('2MB', 'test', 'zip', );
     } catch (Exception $E) {
         echo 'Exception: ',  $E->getMessage(), "\n";
     }

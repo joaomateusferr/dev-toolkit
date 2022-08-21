@@ -6,6 +6,9 @@
 
         if(isset($_POST['FileName']) && isset($_POST['FileExtension']) && isset($_POST['FileSize']) && isset($_POST['FileUnit']) && isset($_POST['FileMode'])){
             $Result = DummyFile::createDummyFile($_POST['FileName'], $_POST['FileExtension'], $_POST['FileSize'], $_POST['FileUnit'], $_POST['FileMode']);
+
+            if(isset($_POST['FileMode']) && $_POST['FileMode'] == 'FILE' && isset($_POST['FileDelete']) && $_POST['FileDelete'] && isset($_POST['DeleteTime']))
+                DummyFile::createDummyFile($_POST['FileName'], $_POST['FileExtension'], $_POST['DeleteTime']);
         }
 
     } catch (Exception $E) {

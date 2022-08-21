@@ -38,13 +38,13 @@
                         
                         <div class="col-sm-2">
                             <label for="FileMode">Mode</label>
-                            <select id="FileMode" name="FileMode">
+                            <select id="FileMode" name="FileMode" onchange=changeFileMode()>
                                 <option value="FILE">File</option>
                                 <option value="COMMAND" selected>Command</option>
                             </select>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 DivFile">
                             <label for="FileDelete">Delete?</label>
                             <select id="FileDelete" name="FileDelete">
                                 <option value="1">Yes</option>
@@ -52,7 +52,7 @@
                             </select>
                         </div>
 
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 DivFile">
                             <label for="DeleteTime">In?</label>
                             <select id="DeleteTime" name="DeleteTime">
                                 <option value="5">5 Minutes</option>
@@ -96,7 +96,7 @@
 
                     <div class="row">
 
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 DivCommand">
                             <label for="FileCommand">Command</label>
                             <input type="text" id="FileCommand" name="FileCommand">
                         </div>
@@ -116,6 +116,39 @@
             </div>
             
         </div>
+
+        <script>
+
+            changeFileMode()
+
+            function changeDiv(Elements, Operation){
+
+                var DisplayMode = Operation == 'SHOW' ? 'block' : 'none'
+                var DisabledMode = Operation == 'SHOW' ? false: true;
+                
+                for (var Index = 0; Index < Elements.length; Index++) {
+                    Elements[Index].style.display = DisplayMode;
+                    Elements[Index].disabled = DisabledMode;
+                }
+
+            }
+
+            function changeFileMode(){
+
+                var FileMode = document.getElementById("FileMode");
+                var DivsFile = document.getElementsByClassName("DivFile");
+                var DivsCommand = document.getElementsByClassName("DivCommand");
+
+                if(FileMode.value == 'FILE'){
+                    changeDiv(DivsFile, 'SHOW')
+                    changeDiv(DivsCommand, 'HIDE')
+                } else if(FileMode.value == 'COMMAND'){
+                    changeDiv(DivsFile, 'HIDE')
+                    changeDiv(DivsCommand, 'SHOW')
+                }
+            }
+
+        </script>
 
 	</body>
 	

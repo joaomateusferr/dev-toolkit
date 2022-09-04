@@ -51,9 +51,7 @@ else
             fi
 
             service apache2 restart
-            chmod -R 777 /var/www/html/
-            echo "<?php phpinfo(); ?>" >> /var/www/html/index.php
-            rm -rf /var/www/html/index.html
+            chmod -R 777 /var/www/dev-toolkit/
         fi
     fi
 fi

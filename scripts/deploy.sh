@@ -51,7 +51,7 @@ else
             fi
 
             service apache2 restart
-            chmod -R 777 /var/www/dev-toolkit/
+            chmod -R 777 /var/www/html/dev-toolkit/
         fi
     fi
 fi

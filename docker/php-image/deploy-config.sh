@@ -1,9 +1,13 @@
 #!/bin/bash
 
 PRODUCTION_ENVIRONMENT=0
+
+GIT_REPO='https://github.com/joaomateusferr/dev-toolkit.git'
+GIT_PROJECT_NAME=$(basename $GIT_REPO .git)
+
 PHP_DIR='/etc/php/'
-APACHE_DIR'/etc/apache2/'
-CONF='default.conf'
+APACHE_DIR='/etc/apache2/'
+SITES_PATH='/var/www/'
 
 if [ ! -e $PHP_DIR ];then
     echo 'PHP not installed'
@@ -41,10 +45,19 @@ else
     fi
 fi
 
+cd $SITES_PATH
+git clone $GIT_REPO
+chmod -R 777 "$SITES_PATH$GIT_PROJECT_NAME/"
+
 if [ ! -e $APACHE_DIR ];then
     echo 'Apache not installed'
 else
     DEFAULT_CONF="$APACHE_DIR/sites-available/000-default.conf"
-    cat $CONF > $DEFAULT_CONF
+    echo '<VirtualHost *:80>' > $DEFAULT_CONF
+    echo '  ServerAdmin webmaster@localhost' >> $DEFAULT_CONF
+    echo "  DocumentRoot $SITES_PATH$GIT_PROJECT_NAME/public/" >> $DEFAULT_CONF
+    echo '  ErrorLog ${APACHE_LOG_DIR}/error.log' >> $DEFAULT_CONF
+    echo '  CustomLog ${APACHE_LOG_DIR}/access.log combined' >> $DEFAULT_CONF
+    echo '</VirtualHost>' >> $DEFAULT_CONF
     service apache2 restart
 if

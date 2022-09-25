@@ -8,9 +8,7 @@ COPY ./deploy-config.sh /
 RUN sh /deploy-config.sh
 RUN rm /deploy-config.sh
 
-RUN chmod -R 777 /var/www/html/
-
-#RUN /etc/apache2/sites-available
+RUN chmod -R 777 /var/www/dev-toolkit/
 
 EXPOSE 80
 EXPOSE 443

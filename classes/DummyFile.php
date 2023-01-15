@@ -69,4 +69,8 @@ class DummyFile {
 
     }
 
+    public static function deleteDummyFile($Name, $Extension, $When) {
+        
+    }
+
 }

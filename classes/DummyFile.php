@@ -2,13 +2,13 @@
 
 class DummyFile {
 
-    private const DUMMY_FILE_FILE_PATH = '/dev-toolkit/dummy-files/';
+    private const DUMMY_FILE_FILE_PATH = '/dummy-files/';
     private const FILE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB'];
     private const DUMMY_FILE_MODES = ['FILE', 'COMMAND'];
 
     public static function createDummyFile($Name, $Extension, $Size, $Unit, $Mode) {
 
-        $FilePath = $_SERVER['DOCUMENT_ROOT'].self::DUMMY_FILE_FILE_PATH;
+        $FilePath = Constants::getProjectPath().self::DUMMY_FILE_FILE_PATH;
         $FileName = "$Name.$Extension";
         $ExportPath = $FilePath.$FileName;
             
